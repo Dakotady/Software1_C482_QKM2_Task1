@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="This is the Start of my C482 Project.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="added GUI and functional exit button" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +49,28 @@
       <option name="presentableId" value="Default" />
       <updated>1683413951879</updated>
     </task>
+    <task id="LOCAL-00001" summary="added GUI and functional exit button">
+      <created>1683434584549</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683434584549</updated>
+    </task>
+    <task id="LOCAL-00002" summary="JavaDoc files">
+      <created>1683434732213</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683434732213</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added GUI and functional exit button">
+      <created>1683434758628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683434758628</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -70,7 +86,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="This is the Start of my C482 Project." />
-    <option name="LAST_COMMIT_MESSAGE" value="This is the Start of my C482 Project." />
+    <MESSAGE value="JavaDoc files" />
+    <MESSAGE value="added GUI and functional exit button" />
+    <option name="LAST_COMMIT_MESSAGE" value="added GUI and functional exit button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
