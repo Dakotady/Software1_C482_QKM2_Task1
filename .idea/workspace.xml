@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="This is the Start of my C482 Project.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +17,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Dakotadyche@gmail.com" />
+        <option value="Dakota Dyche" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2PRJQwZwpI6W5XBIfxHwsiX15Ya" />
@@ -60,5 +56,50 @@
       <updated>1683413951879</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This is the Start of my C482 Project." />
+    <option name="LAST_COMMIT_MESSAGE" value="This is the Start of my C482 Project." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java</url>
+          <line>17</line>
+          <properties class="task1.software1_c482_qkm2_task1.MainController" method="onExitappButtonClick">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
