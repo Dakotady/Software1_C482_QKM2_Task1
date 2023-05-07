@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="task1.software1_c482_qkm2_task1.MainController">
+<AnchorPane prefHeight="403.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="task1.software1_c482_qkm2_task1.MainController">
    <children>
       <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Management System">
          <font>
@@ -60,6 +60,6 @@
             <Insets top="1.0" />
          </opaqueInsets>
       </Pane>
-      <Button fx:id="exitApp" layoutX="913.0" layoutY="365.0" mnemonicParsing="false" onAction="#onExitappButtonClick" prefHeight="25.0" prefWidth="41.0" text="Exit" />
+      <Button fx:id="exitApp" layoutX="913.0" layoutY="364.0" mnemonicParsing="false" onAction="#onExitappButtonClick" prefHeight="25.0" prefWidth="41.0" text="Exit" />
    </children>
-</Pane>
+</AnchorPane>

@@ -9,19 +9,23 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController {
     @FXML
 
     private Button exitApp;
 
+    // this is for the exit button on the main form.
     @FXML
-    protected void onExitappButtonClick() {
+    public void onExitappButtonClick() {
         Platform.exit();
         }
 
-
+/*
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("I am initialized");
     }
+ */
+
+
 }
