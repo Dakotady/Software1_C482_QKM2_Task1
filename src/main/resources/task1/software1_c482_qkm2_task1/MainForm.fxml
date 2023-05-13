@@ -28,8 +28,8 @@
                </font>
             </Text>
             <TextField layoutX="264.0" layoutY="19.0" prefHeight="25.0" prefWidth="158.0" promptText="Search by Part ID or Name" />
-            <Button layoutX="215.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Add" />
-            <Button layoutX="281.0" layoutY="257.0" mnemonicParsing="false" text="Modify" />
+            <Button layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddPartClick" prefHeight="25.0" prefWidth="53.0" text="Add" />
+            <Button layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#onModifyPartClick" text="Modify" />
             <Button layoutX="347.0" layoutY="257.0" mnemonicParsing="false" text="Delete" />
          </children>
          <opaqueInsets>
@@ -46,14 +46,14 @@
                   <TableColumn prefWidth="142.0" text="Price/ Cost per Unit" />
                </columns>
             </TableView>
-            <Text layoutX="21.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parts">
+            <Text layoutX="21.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Text>
             <TextField layoutX="264.0" layoutY="19.0" prefHeight="25.0" prefWidth="158.0" promptText="Search by Part ID or Name" />
-            <Button layoutX="215.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Add" />
-            <Button layoutX="281.0" layoutY="257.0" mnemonicParsing="false" text="Modify" />
+            <Button layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddProductClick" prefHeight="25.0" prefWidth="53.0" text="Add" />
+            <Button layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#onModifyProductClick" text="Modify" />
             <Button layoutX="347.0" layoutY="257.0" mnemonicParsing="false" text="Delete" />
          </children>
          <opaqueInsets>

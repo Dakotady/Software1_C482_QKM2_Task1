@@ -8,7 +8,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * This is the main class that opens when the application starts *
+ * This is the main class that opens when the application starts
+ * the javaDocs will be in a folder named JavaDocs located /Software1_C482_QKM2_Task1/JavaDocs
  *<p>
  * <b>FUTURE ENHANCEMENT:</b> I would tie this to a SQL database so the information could be sent shared better.<br>
  * I would also combine the Add part and add product form and use another radio button to choose what is being added.
@@ -20,12 +21,12 @@ import java.io.IOException;
  */
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage HomeScreen) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainForm.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 400);
-        stage.setTitle("");
-        stage.setScene(scene);
-        stage.show();
+        HomeScreen.setTitle("");
+        HomeScreen.setScene(scene);
+        HomeScreen.show();
     }
 
     public static void main(String[] args) {

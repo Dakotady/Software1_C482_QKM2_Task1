@@ -11,11 +11,11 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <RadioButton fx:id="radioInHouse" layoutX="149.0" layoutY="34.0" mnemonicParsing="false" onAction="#OnRadioClick" selected="true" text="In-House">
+      <RadioButton layoutX="149.0" layoutY="34.0" mnemonicParsing="false" onAction="#OnRadioClick" selected="true" text="In-House">
          <toggleGroup>
             <ToggleGroup fx:id="group1" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="radioOutsourced" layoutX="300.0" layoutY="34.0" mnemonicParsing="false" onAction="#OnRadioClick" text="Outsourced" toggleGroup="$group1" />
+      <RadioButton layoutX="300.0" layoutY="34.0" mnemonicParsing="false" onAction="#OnRadioClick" text="Outsourced" toggleGroup="$group1" />
       <TextField editable="false" layoutX="149.0" layoutY="108.0" prefHeight="25.0" prefWidth="118.0" promptText="Auto Gen-Disabled" />
       <Text layoutX="56.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
       <TextField layoutX="149.0" layoutY="188.0" prefHeight="25.0" prefWidth="118.0" />
@@ -31,7 +31,7 @@
       <TextField fx:id="machineID" layoutX="149.0" layoutY="308.0" prefHeight="25.0" prefWidth="118.0" />
       <Text layoutX="56.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID" />
       <Button layoutX="300.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Save" />
-      <Button layoutX="383.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Cancel" />
+      <Button layoutX="383.0" layoutY="354.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="25.0" prefWidth="60.0" text="Cancel" />
       <TextField fx:id="companyName" editable="false" layoutX="149.0" layoutY="308.0" prefHeight="25.0" prefWidth="118.0" visible="false" />
    </children>
 </AnchorPane>

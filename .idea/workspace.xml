@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="adding supplied support file.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddPart.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddProduct.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyPart.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyProduct.fxml" afterDir="false" />
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Added links between all FXML files.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/InHouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Outsourced.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/AddProduct.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/ModifyProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,18 +65,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/dakot/IdeaProjects/Software1_C482_QKM2_Task1/src/main/resources/task1/software1_c482_qkm2_task1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dakot/IdeaProjects/Software1_C482_QKM2_Task1/src/main/resources/task1/software1_c482_qkm2_task1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dakot\IdeaProjects\Software1_C482_QKM2_Task1\src\main\resources\task1\software1_c482_qkm2_task1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dakot\IdeaProjects\Software1_C482_QKM2_Task1\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="task1.software1_c482_qkm2_task1" />
@@ -199,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683481436735</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add new controllers and GUI's.">
+      <created>1683492307886</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683492307886</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +236,8 @@
     <MESSAGE value="added GUI and functional exit button" />
     <MESSAGE value="add JavaDoc files" />
     <MESSAGE value="adding supplied support file." />
-    <option name="LAST_COMMIT_MESSAGE" value="adding supplied support file." />
+    <MESSAGE value="Add new controllers and GUI's." />
+    <MESSAGE value="Added links between all FXML files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added links between all FXML files." />
   </component>
 </project>
