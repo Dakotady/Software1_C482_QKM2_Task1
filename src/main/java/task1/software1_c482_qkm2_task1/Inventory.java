@@ -1,5 +1,6 @@
 package task1.software1_c482_qkm2_task1;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 
@@ -8,14 +9,8 @@ import javafx.collections.ObservableList;
  */
 public class Inventory {
 
-
-    private static ObservableList allParts() {
-        return null;
-    }
-
-    private static ObservableList allProduct() {
-        return null;
-    }
+    private static final ObservableList<Part> allParts = FXCollections.observableArrayList();
+    private static final ObservableList<Product> allProduct = FXCollections.observableArrayList();
 
     public void addPart(){
 

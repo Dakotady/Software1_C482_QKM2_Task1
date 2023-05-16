@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Added links between all FXML files.">
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Updated fxml files with fxIDs and action events.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" afterDir="false" />
@@ -51,6 +52,9 @@
         <option name="url" value="https://github.com/Dakotady/Software1_C482_QKM2_Task1.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2PRJQwZwpI6W5XBIfxHwsiX15Ya" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -224,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683963836448</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Updated fxml files with fxIDs and action events.">
+      <created>1684206869298</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684206869298</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,6 +258,7 @@
     <MESSAGE value="adding supplied support file." />
     <MESSAGE value="Add new controllers and GUI's." />
     <MESSAGE value="Added links between all FXML files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added links between all FXML files." />
+    <MESSAGE value="Updated fxml files with fxIDs and action events." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated fxml files with fxIDs and action events." />
   </component>
 </project>
