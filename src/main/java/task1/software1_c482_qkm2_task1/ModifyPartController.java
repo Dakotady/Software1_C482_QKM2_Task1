@@ -30,4 +30,7 @@ public class ModifyPartController {
         stage.show();
 
     }
+
+    public void onSaveClick(ActionEvent actionEvent) {
+    }
 }

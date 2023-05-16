@@ -24,4 +24,15 @@ public class AddProductController {
     }
 
 
+    public void onFilterAddProduct(ActionEvent actionEvent) {
+    }
+
+    public void onAddAssociationClick(ActionEvent actionEvent) {
+    }
+
+    public void onRemoveAssociationClick(ActionEvent actionEvent) {
+    }
+
+    public void onSaveClick(ActionEvent actionEvent) {
+    }
 }

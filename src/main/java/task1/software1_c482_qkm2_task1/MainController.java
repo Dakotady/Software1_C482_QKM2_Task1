@@ -65,12 +65,9 @@ public class MainController {
     }
 
 
-    /*
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("I am initialized");
+    public void onFilterPart(ActionEvent actionEvent) {
     }
- */
 
-
+    public void onFilterProduct(ActionEvent actionEvent) {
+    }
 }

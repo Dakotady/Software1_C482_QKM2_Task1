@@ -32,4 +32,7 @@ public class AddPartController {
         stage.show();
 
     }
+
+    public void onSaveClick(ActionEvent actionEvent) {
+    }
 }

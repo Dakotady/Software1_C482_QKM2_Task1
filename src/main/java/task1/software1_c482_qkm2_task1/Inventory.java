@@ -9,11 +9,11 @@ import javafx.collections.ObservableList;
 public class Inventory {
 
 
-    private ObservableList allParts() {
+    private static ObservableList allParts() {
         return null;
     }
 
-    private ObservableList allProduct() {
+    private static ObservableList allProduct() {
         return null;
     }
 

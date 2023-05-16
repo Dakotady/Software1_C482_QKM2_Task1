@@ -22,4 +22,15 @@ public class ModifyProductController {
 
     }
 
+    public void onFilterModifyProduct(ActionEvent actionEvent) {
+    }
+
+    public void onAddAssociationClick(ActionEvent actionEvent) {
+    }
+
+    public void onRemoveAssociationClick(ActionEvent actionEvent) {
+    }
+
+    public void onSaveClick(ActionEvent actionEvent) {
+    }
 }

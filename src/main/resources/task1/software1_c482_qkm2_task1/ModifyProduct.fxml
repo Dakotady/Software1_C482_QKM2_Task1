@@ -8,43 +8,43 @@
    <children>
       <Pane layoutX="18.0" layoutY="30.0" prefHeight="616.0" prefWidth="993.0" style="-fx-border-color: black; -fx-border-radius: 10;">
          <children>
-            <Text layoutX="33.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Product">
+            <Text layoutX="33.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Text>
-            <TextField layoutX="802.0" layoutY="13.0" prefHeight="25.0" prefWidth="157.0" promptText="Search by Part ID or Name" />
-            <TextField disable="true" editable="false" layoutX="130.0" layoutY="79.0" promptText="Auto Gen - Disabled" />
-            <TextField layoutX="130.0" layoutY="118.0" />
-            <TextField layoutX="130.0" layoutY="158.0" prefHeight="25.0" prefWidth="67.0" />
-            <TextField layoutX="130.0" layoutY="198.0" prefHeight="25.0" prefWidth="67.0" />
-            <TextField layoutX="130.0" layoutY="238.0" prefHeight="25.0" prefWidth="67.0" />
+            <TextField fx:id="filterModifyProduct" layoutX="802.0" layoutY="13.0" onAction="#onFilterModifyProduct" prefHeight="25.0" prefWidth="157.0" promptText="Search by Part ID or Name" />
+            <TextField fx:id="ID_modifyProduct" disable="true" editable="false" layoutX="130.0" layoutY="79.0" promptText="Auto Gen - Disabled" />
+            <TextField fx:id="name_modifyProduct" layoutX="130.0" layoutY="118.0" />
+            <TextField fx:id="inv_modifyProduct" layoutX="130.0" layoutY="158.0" prefHeight="25.0" prefWidth="67.0" />
+            <TextField fx:id="price_modifyProduct" layoutX="130.0" layoutY="198.0" prefHeight="25.0" prefWidth="67.0" />
+            <TextField fx:id="max_modifyProduct" layoutX="130.0" layoutY="238.0" prefHeight="25.0" prefWidth="67.0" />
             <Text layoutX="58.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
             <Text layoutX="54.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="56.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" />
             <Text layoutX="56.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
             <Text layoutX="59.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" />
-            <TextField layoutX="266.0" layoutY="238.0" prefHeight="25.0" prefWidth="67.0" />
+            <TextField fx:id="min_modifyProduct" layoutX="266.0" layoutY="238.0" prefHeight="25.0" prefWidth="67.0" />
             <Text layoutX="229.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
-            <TableView layoutX="530.0" layoutY="50.0" prefHeight="200.0" prefWidth="429.0">
+            <TableView fx:id="partsList_modifyProduct" layoutX="530.0" layoutY="50.0" prefHeight="200.0" prefWidth="429.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Part ID" />
-                <TableColumn prefWidth="75.0" text="Part Name" />
-                  <TableColumn prefWidth="104.0" text="Inventory Level" />
-                  <TableColumn prefWidth="169.0" text="Price/ Cost per Unit" />
+                <TableColumn fx:id="col_partID_modifyProduct" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="col_partName_modifyProduct" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="col_invLevel_modifyProduct" prefWidth="104.0" text="Inventory Level" />
+                  <TableColumn fx:id="col_PriceCostPerUnit_ModifyProduct" prefWidth="169.0" text="Price/ Cost per Unit" />
               </columns>
             </TableView>
-            <TableView layoutX="530.0" layoutY="314.0" prefHeight="200.0" prefWidth="429.0">
+            <TableView fx:id="association_modifyProduct" layoutX="530.0" layoutY="314.0" prefHeight="200.0" prefWidth="429.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="Part ID" />
-                  <TableColumn prefWidth="75.0" text="Part Name" />
-                  <TableColumn prefWidth="104.0" text="Inventory Level" />
-                  <TableColumn prefWidth="169.0" text="Price/ Cost per Unit" />
+                  <TableColumn fx:id="col_partID_association" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="col_partName_association" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="col_invLevel_association" prefWidth="104.0" text="Inventory Level" />
+                  <TableColumn fx:id="col_priceCostPerUnit_association" prefWidth="169.0" text="Price/ Cost per Unit" />
                </columns>
             </TableView>
-            <Button layoutX="862.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="Add" />
-            <Button layoutX="763.0" layoutY="528.0" mnemonicParsing="false" text="Remove Associated Part" />
+            <Button fx:id="addAssociation_modifyProduct" layoutX="862.0" layoutY="263.0" mnemonicParsing="false" onAction="#onAddAssociationClick" prefHeight="25.0" prefWidth="45.0" text="Add" />
+            <Button fx:id="removeAssociation_modifyProduct" layoutX="763.0" layoutY="528.0" mnemonicParsing="false" onAction="#onRemoveAssociationClick" text="Remove Associated Part" />
             <Button layoutX="852.0" layoutY="577.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="25.0" prefWidth="54.0" text="Cancel" />
-            <Button layoutX="763.0" layoutY="577.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Save" />
+            <Button fx:id="save_modifyProduct" layoutX="763.0" layoutY="577.0" mnemonicParsing="false" onAction="#onSaveClick" prefHeight="25.0" prefWidth="54.0" text="Save" />
          </children>
       </Pane>
    </children>
