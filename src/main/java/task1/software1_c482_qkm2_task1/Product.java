@@ -1,6 +1,12 @@
 package task1.software1_c482_qkm2_task1;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Product {
+
+    private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
+
     private int id;
     private String name;
     private double price;
@@ -100,5 +106,21 @@ public class Product {
         this.max = max;
     }
 
+    public void addAssociatedPart(Part part){
+        associatedParts.add(part);
+    }
+
+    public boolean deleteAssociatedPart(Part selectedAssociatedPart){
+        if (associatedParts.contains(selectedAssociatedPart)){
+            associatedParts.remove(selectedAssociatedPart);
+            return true;
+        }
+        return false;
+    }
+
+
+    public ObservableList<Part> getAssociatedParts(){
+        return associatedParts;
+    }
 
 }

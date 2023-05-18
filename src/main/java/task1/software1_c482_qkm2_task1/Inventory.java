@@ -66,4 +66,32 @@ public class Inventory {
         int id = allProduct.indexOf(newProduct);
         allProduct.set(id, newProduct);
     }
+
+    public static boolean deletePart(Part selectedPart){
+        for(Part part : allParts){
+            allParts.remove(selectedPart);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean deleteProduct(Product selectedProduct){
+        for (Product product : allProduct){
+            allProduct.remove(selectedProduct);
+            return true;
+        }
+        return false;
+    }
+
+    public static ObservableList<Part> getAllParts(){
+        return allParts;
+    }
+
+    public static ObservableList<Product> getAllProduct(){
+        return allProduct;
+    }
+
+
+
+
 }

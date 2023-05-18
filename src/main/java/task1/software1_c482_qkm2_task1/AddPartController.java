@@ -12,8 +12,10 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class AddPartController {
     public ToggleGroup group1;
@@ -32,8 +34,15 @@ public class AddPartController {
 
     @FXML
 
+    public void  initialize(URL url, ResourceBundle resourceBundle){
+
+
+    }
 
     public void OnRadioClick(ActionEvent actionEvent) {
+
+
+
     }
 
 
