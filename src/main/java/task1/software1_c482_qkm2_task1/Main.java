@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 
 /**
  * This is the main class that opens when the application starts
@@ -20,6 +23,7 @@ import java.io.IOException;
  *</p>
  */
 public class Main extends Application {
+
     @Override
     public void start(Stage HomeScreen) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainForm.fxml"));
@@ -31,5 +35,30 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static class UniqueIDs {
+        private int count = 0;
+        private Set<Integer> usedIds;
+
+        public UniqueIDs() {
+            usedIds = new HashSet<>();
+        }
+
+        public int generateUniqueId() {
+            int id = ++count;
+            while (usedIds.contains(id)) {
+                id = ++count;
+            }
+            usedIds.add(id);
+            return id;
+        }
+
+        public int outputUid() {
+            UniqueIDs uniqueIDs = new UniqueIDs();
+
+            int Uid = uniqueIDs.generateUniqueId();
+            return Uid;
+        }
     }
 }
