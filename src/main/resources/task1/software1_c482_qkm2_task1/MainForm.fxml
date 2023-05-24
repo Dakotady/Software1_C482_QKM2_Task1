@@ -5,65 +5,55 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="403.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="task1.software1_c482_qkm2_task1.MainController">
+<AnchorPane prefHeight="403.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="task1.software1_c482_qkm2_task1.MainController">
    <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Management System">
       <font>
-         <Font name="System Bold" size="14.0"/>
+         <Font name="System Bold" size="14.0" />
       </font>
    </Text>
-   <Pane layoutX="36.0" layoutY="54.0" prefHeight="296.0" prefWidth="441.0"
-         style="-fx-border-radius: 15; -fx-border-color: black;">
+   <Pane layoutX="36.0" layoutY="54.0" prefHeight="296.0" prefWidth="441.0" style="-fx-border-radius: 15; -fx-border-color: black;">
       <opaqueInsets>
-         <Insets top="1.0"/>
+         <Insets top="1.0" />
       </opaqueInsets>
       <TableView fx:id="partsList" layoutX="20.0" layoutY="43.0" prefHeight="200.0" prefWidth="402.0">
          <columns>
-            <TableColumn fx:id="col_partID_part" prefWidth="75.0" text="Part ID"/>
-            <TableColumn fx:id="col_partName_part" prefWidth="75.0" text="Part Name"/>
-            <TableColumn fx:id="col_inventoryLevel_part" prefWidth="94.0" text="Inventory Level"/>
-            <TableColumn fx:id="col_priceCostPerUnit_part" prefWidth="142.0" text="Price/ Cost per Unit"/>
+            <TableColumn fx:id="col_partID_part" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="col_partName_part" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="col_inventoryLevel_part" prefWidth="94.0" text="Inventory Level" />
+            <TableColumn fx:id="col_priceCostPerUnit_part" prefWidth="142.0" text="Price/ Cost per Unit" />
          </columns>
       </TableView>
       <Text layoutX="21.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parts">
          <font>
-            <Font name="System Bold" size="12.0"/>
+            <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="filterPart" layoutX="264.0" layoutY="19.0" onAction="#onFilterPart" prefHeight="25.0"
-                 prefWidth="158.0" promptText="Search by Part ID or Name"/>
-      <Button fx:id="onAddPart" layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddPartClick"
-              prefHeight="25.0" prefWidth="53.0" text="Add"/>
-      <Button fx:id="onModifyPart" layoutX="281.0" layoutY="257.0" mnemonicParsing="false"
-              onAction="#onModifyPartClick" text="Modify"/>
-      <Button fx:id="onDeletePart" layoutX="347.0" layoutY="257.0" mnemonicParsing="false" text="Delete"/>
+      <TextField fx:id="filterPart" layoutX="264.0" layoutY="19.0" onAction="#onFilterPart" prefHeight="25.0" prefWidth="158.0" promptText="Search by Part ID or Name" />
+      <Button fx:id="onAddPart" layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddPartClick" prefHeight="25.0" prefWidth="53.0" text="Add" />
+      <Button fx:id="onModifyPart" layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#onModifyPartClick" text="Modify" />
+      <Button fx:id="onDeletePart" layoutX="347.0" layoutY="257.0" mnemonicParsing="false" onAction="#onDeletePartClick" text="Delete" />
    </Pane>
-   <Pane layoutX="524.0" layoutY="54.0" prefHeight="296.0" prefWidth="441.0"
-         style="-fx-border-radius: 15; -fx-border-color: black;">
+   <Pane layoutX="524.0" layoutY="54.0" prefHeight="296.0" prefWidth="441.0" style="-fx-border-radius: 15; -fx-border-color: black;">
       <opaqueInsets>
-         <Insets top="1.0"/>
+         <Insets top="1.0" />
       </opaqueInsets>
       <TableView fx:id="productsList" layoutX="20.0" layoutY="43.0" prefHeight="200.0" prefWidth="402.0">
          <columns>
-            <TableColumn fx:id="col_partID_product" prefWidth="75.0" text="Part ID"/>
-            <TableColumn fx:id="col_partName_product" prefWidth="75.0" text="Part Name"/>
-            <TableColumn fx:id="col_inventoryLevel_product" prefWidth="94.0" text="Inventory Level"/>
-            <TableColumn fx:id="col_priceCostPerUnit_product" prefWidth="142.0" text="Price/ Cost per Unit"/>
+            <TableColumn fx:id="col_partID_product" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="col_partName_product" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="col_inventoryLevel_product" prefWidth="94.0" text="Inventory Level" />
+            <TableColumn fx:id="col_priceCostPerUnit_product" prefWidth="142.0" text="Price/ Cost per Unit" />
          </columns>
       </TableView>
       <Text layoutX="21.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products">
          <font>
-            <Font name="System Bold" size="12.0"/>
+            <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="filterProduct" layoutX="264.0" layoutY="19.0" onAction="#onFilterProduct" prefHeight="25.0"
-                 prefWidth="158.0" promptText="Search by Part ID or Name"/>
-      <Button fx:id="onAddProduct" layoutX="215.0" layoutY="257.0" mnemonicParsing="false"
-              onAction="#onAddProductClick" prefHeight="25.0" prefWidth="53.0" text="Add"/>
-      <Button fx:id="onModifyProduct" layoutX="281.0" layoutY="257.0" mnemonicParsing="false"
-              onAction="#onModifyProductClick" text="Modify"/>
-      <Button fx:id="onDeleteProduct" layoutX="347.0" layoutY="257.0" mnemonicParsing="false" text="Delete"/>
+      <TextField fx:id="filterProduct" layoutX="264.0" layoutY="19.0" onAction="#onFilterProduct" prefHeight="25.0" prefWidth="158.0" promptText="Search by Part ID or Name" />
+      <Button fx:id="onAddProduct" layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddProductClick" prefHeight="25.0" prefWidth="53.0" text="Add" />
+      <Button fx:id="onModifyProduct" layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#onModifyProductClick" text="Modify" />
+      <Button fx:id="onDeleteProduct" layoutX="347.0" layoutY="257.0" mnemonicParsing="false" onAction="#onDeleteProductClick" text="Delete" />
    </Pane>
-   <Button fx:id="exitApp" layoutX="913.0" layoutY="364.0" mnemonicParsing="false" onAction="#onExitAppButtonClick"
-           prefHeight="25.0" prefWidth="41.0" text="Exit"/>
+   <Button fx:id="exitApp" layoutX="913.0" layoutY="364.0" mnemonicParsing="false" onAction="#onExitAppButtonClick" prefHeight="25.0" prefWidth="41.0" text="Exit" />
 </AnchorPane>

@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="finished filling out the InHouse.java, Inventory.java, Outsourced.java &amp; Product.java.">
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Started connecting the controllers to the Classes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/InHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/InHouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Outsourced.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,17 +55,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/dakot/IdeaProjects/Software1_C482_QKM2_Task1/src/main/java/task1/software1_c482_qkm2_task1",
-    "last_opened_file_path": "C:/Users/dakot/Desktop/New folder (6)/wgu-C482-InventoryManagement-master/wgu-C482-InventoryManagement-master",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/dakot/IdeaProjects/Software1_C482_QKM2_Task1/src/main/java/task1/software1_c482_qkm2_task1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dakot/Desktop/New folder (6)/wgu-C482-InventoryManagement-master/wgu-C482-InventoryManagement-master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dakot\IdeaProjects\Software1_C482_QKM2_Task1\src\main\resources\task1\software1_c482_qkm2_task1" />
@@ -255,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684378689468</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Started connecting the controllers to the Classes.">
+      <created>1684727738965</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684727738965</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +285,7 @@
     <MESSAGE value="Updated fxml files with fxIDs and action events." />
     <MESSAGE value="populated the Inventory.java and Product.java files to store and receive information." />
     <MESSAGE value="finished filling out the InHouse.java, Inventory.java, Outsourced.java &amp; Product.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="finished filling out the InHouse.java, Inventory.java, Outsourced.java &amp; Product.java." />
+    <MESSAGE value="Started connecting the controllers to the Classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started connecting the controllers to the Classes." />
   </component>
 </project>

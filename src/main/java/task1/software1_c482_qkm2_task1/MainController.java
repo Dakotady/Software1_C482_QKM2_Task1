@@ -1,16 +1,15 @@
 package task1.software1_c482_qkm2_task1;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -59,15 +58,32 @@ public class MainController implements Initializable {
         stage.show();
     }
 
+    public Part selectedPart;
+    public void setSelectedPart(Part selected){
+        selectedPart = selected;
+    }
+    public Part getSelectedPart(){
+        return selectedPart;
+    }
+
     // this is to send the user to the add part form.
     public void onModifyPartClick(ActionEvent actionEvent) throws IOException {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ModifyPart.fxml")));
-        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow();
-        Scene modifyPart = new Scene(root, 600, 400);
-        stage.setTitle("");
-        stage.setScene(modifyPart);
-        stage.show();
+        Part selected = (Part) partsList.getSelectionModel().getSelectedItem();
+        setSelectedPart(selected);
+
+        if (selected == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No part has been selected. Please select a part to modify.");
+            alert.showAndWait();
+        }else {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ModifyPart.fxml")));
+            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            Scene modifyPart = new Scene(root, 600, 400);
+            stage.setTitle("");
+            stage.setScene(modifyPart);
+            stage.show();
+        }
     }
 
 
@@ -81,38 +97,107 @@ public class MainController implements Initializable {
         stage.show();
     }
 
-    public void onModifyProductClick(ActionEvent actionEvent) throws IOException {
-
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ModifyProduct.fxml")));
-        Stage stage = (Stage) ((Button)actionEvent.getSource()).getScene().getWindow();
-        Scene ModifyProduct = new Scene(root, 1062, 667);
-        stage.setTitle("");
-        stage.setScene(ModifyProduct);
-        stage.show();
-    }
-
-    private static Part selectedPart;
-    public static void setSelectedPart(Part selected){
-        selectedPart = selected;
-    }
-    public static Part getSelectedPart() {
-        return selectedPart;
-    }
-
-
-    private static Product selectedProduct;
-    public static void setSelectedProduct(Product selected){
+    public Product selectedProduct;
+    public void setSelectedProduct(Product selected){
         selectedProduct = selected;
     }
-    public static Product getSelectedProduct(){
+    public Product getSelectedProduct(){
         return selectedProduct;
+    }
+
+    public void onModifyProductClick(ActionEvent actionEvent) throws IOException {
+
+        Product selected = (Product) productsList.getSelectionModel().getSelectedItem();
+        setSelectedProduct(selected);
+
+        if (selected == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No part has been selected. Please select a part to modify.");
+            alert.showAndWait();
+        }else {
+
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ModifyProduct.fxml")));
+            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            Scene ModifyProduct = new Scene(root, 1062, 667);
+            stage.setTitle("");
+            stage.setScene(ModifyProduct);
+            stage.show();
+        }
     }
 
 
     public void onFilterPart(ActionEvent actionEvent) {
+
+        String filter = filterPart.getText();
+        ObservableList<Part> filteredList = FXCollections.observableArrayList();
+
+
+        try {
+            Part IdSearch = Inventory.lookupPart(Integer.parseInt(filter));
+            filteredList.add(IdSearch);
+        } catch (Exception parseString){
+            filteredList = Inventory.lookupPart(filter);
+        }
+        partsList.setItems(filteredList);
+
+        if (filter.isEmpty() || filter.isBlank()){
+            partsList.setItems(Inventory.getAllParts());
+        }
     }
 
     public void onFilterProduct(ActionEvent actionEvent) {
+
+        String filter = filterProduct.getText();
+        ObservableList<Product> filteredList = FXCollections.observableArrayList();
+
+
+        try {
+            Product IdSearch = Inventory.lookupProduct(Integer.parseInt(filter));
+            filteredList.add(IdSearch);
+        } catch (Exception parseString){
+            filteredList = Inventory.lookupProduct(filter);
+        }
+        productsList.setItems(filteredList);
+
+        if (filter.isEmpty() || filter.isBlank()){
+            productsList.setItems(Inventory.getAllProduct());
+        }
+    }
+
+    public void onDeletePartClick(ActionEvent actionEvent) {
+
+        boolean response;
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("");
+        alert.setHeaderText("Are you sure you want to delete the selected part?");
+        alert.setContentText("Choose Ok to delete or Cancel to keep the part.");
+        ButtonType result = alert.showAndWait().orElse(ButtonType.CANCEL);
+        response = result == ButtonType.OK;
+
+        if (response){
+            Part selected = (Part) partsList.getSelectionModel().getSelectedItem();
+            Inventory.deletePart(selected);
+            partsList.setItems(Inventory.getAllParts());
+        }
+    }
+
+    public void onDeleteProductClick(ActionEvent actionEvent) {
+
+        boolean response;
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("");
+        alert.setHeaderText("Are you sure you want to delete the selected product?");
+        alert.setContentText("Choose Ok to delete or Cancel to keep the product.");
+        ButtonType result = alert.showAndWait().orElse(ButtonType.CANCEL);
+        response = result == ButtonType.OK;
+
+        if (response){
+            Product selected = (Product) productsList.getSelectionModel().getSelectedItem();
+            Inventory.deleteProduct(selected);
+            productsList.setItems(Inventory.getAllProduct());
+        }
     }
 
     @Override
@@ -146,4 +231,6 @@ public class MainController implements Initializable {
 
 
     }
+
+
 }
