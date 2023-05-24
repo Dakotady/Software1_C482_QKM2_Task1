@@ -69,6 +69,8 @@ public class ModifyPartController implements Initializable {
     public void onSaveClick(ActionEvent actionEvent) throws IOException {
 
         Part selectedPart = MainController.getSelectedPart();
+        int index = Inventory.getAllParts().indexOf(selectedPart);
+
 
         boolean textError = false;
         boolean errorFree = true;
@@ -107,7 +109,7 @@ public class ModifyPartController implements Initializable {
                 alert1.showAndWait();
                 min_modifyPart.setText("");
                 errorFree = false;
-            } else if (stock > max) {
+            } else if (stock > max || stock < min) {
                 Alert alert1 = new Alert(Alert.AlertType.ERROR);
                 alert1.setContentText("The Inv value cannot be greater than the max value.");
                 alert1.showAndWait();
@@ -116,22 +118,21 @@ public class ModifyPartController implements Initializable {
             }
 
             if (inHouseSelect_modifyPart.isSelected() && errorFree){
-                selectedPart.setName(partName);
-                selectedPart.setStock(stock);
-                selectedPart.setPrice(price);
-                selectedPart.setMax(max);
-                selectedPart.setMin(min);
-                ((InHouse) selectedPart).setMachineId(Integer.parseInt(flexField_modifyPart.getText()));
+
+                int machineID = Integer.parseInt(flexField_modifyPart.getText());
+                InHouse updatedPart = new InHouse(id, partName, price, stock, min, max, machineID);
+                Inventory.updatePart(index, updatedPart);
             }
 
+
             if (outSourcedSelect_modifyPart.isSelected() && errorFree){
-                selectedPart.setName(partName);
-                selectedPart.setStock(stock);
-                selectedPart.setPrice(price);
-                selectedPart.setMax(max);
-                selectedPart.setMin(min);
-                ((Outsourced) selectedPart).setCompanyName(flexField_modifyPart.getText());
+
+                String company = flexField_modifyPart.getText();
+                Outsourced updatedPart = new Outsourced(id, partName, price, stock, min, max, company);
+                Inventory.updatePart(index, updatedPart);
             }
+
+
 
 
 

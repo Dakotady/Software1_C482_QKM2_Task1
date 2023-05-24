@@ -130,15 +130,27 @@ public class MainController implements Initializable {
 
         String filter = filterPart.getText();
         ObservableList<Part> filteredList = FXCollections.observableArrayList();
+        boolean isnull = false;
 
 
         try {
             Part IdSearch = Inventory.lookupPart(Integer.parseInt(filter));
             filteredList.add(IdSearch);
+            if (IdSearch == null){
+                isnull = true;
+            }
         } catch (Exception parseString){
-            filteredList = Inventory.lookupPart(filter);
+                filteredList = Inventory.lookupPart(filter);
         }
-        partsList.setItems(filteredList);
+
+        if (filteredList == null || filteredList.isEmpty() || isnull ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No parts have been found. please refine search criteria.");
+            alert.showAndWait();
+            filterPart.setText("");
+        }else {
+            partsList.setItems(filteredList);
+        }
 
         if (filter.isEmpty() || filter.isBlank()){
             partsList.setItems(Inventory.getAllParts());
@@ -149,15 +161,27 @@ public class MainController implements Initializable {
 
         String filter = filterProduct.getText();
         ObservableList<Product> filteredList = FXCollections.observableArrayList();
-
+        boolean isnull = false;
 
         try {
             Product IdSearch = Inventory.lookupProduct(Integer.parseInt(filter));
             filteredList.add(IdSearch);
+            if (IdSearch == null) {
+                isnull = true;
+            }
         } catch (Exception parseString){
             filteredList = Inventory.lookupProduct(filter);
         }
-        productsList.setItems(filteredList);
+
+
+        if (filteredList == null || filteredList.isEmpty() || isnull ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No Products have been found. please refine search criteria.");
+            alert.showAndWait();
+            filterPart.setText("");
+        }else {
+            productsList.setItems(filteredList);
+        }
 
         if (filter.isEmpty() || filter.isBlank()){
             productsList.setItems(Inventory.getAllProduct());
@@ -210,8 +234,8 @@ public class MainController implements Initializable {
         productsList.setItems(Inventory.getAllProduct());
 
         //adds temp parts to model delete before submission.
-        Product four = new Product(1, "30", 3.50, 1, 3, 6);
-        Product five = new Product(2, "10", 1.25, 2, 4, 6);
+        Product four = new Product(1, "TestProd1", 3.50, 1, 3, 6);
+        Product five = new Product(2, "TestProd2", 1.25, 2, 4, 6);
 
         Inventory.getAllProduct().addAll(four, five);
         // cont delete.

@@ -109,7 +109,7 @@ public class AddPartController implements Initializable {
                 alert1.showAndWait();
                 min_addPart.setText("");
                 errorFree = false;
-            } else if (stock > max) {
+            } else if (stock > max || stock < min) {
                 Alert alert1 = new Alert(Alert.AlertType.ERROR);
                 alert1.setContentText("The Inv value cannot be greater than the max value.");
                 alert1.showAndWait();
@@ -122,14 +122,16 @@ public class AddPartController implements Initializable {
 
                 int machID = Integer.parseInt(flexField_addPart.getText());
                 InHouse inHouse = new InHouse(id, partName, price, stock, min, max, machID);
-                Inventory.getAllParts().addAll(inHouse);
+                Inventory.addPart(inHouse);
             }
 
             if (outSourcedSelect_addPart.isSelected() && errorFree) {
                 String compName = flexField_addPart.getText();
                 Outsourced outsourced = new Outsourced(id, partName, price, stock, min, max, compName);
-                Inventory.getAllParts().addAll(outsourced);
+                Inventory.addPart(outsourced);
             }
+
+
 
 
             if (errorFree) {
