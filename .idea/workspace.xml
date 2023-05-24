@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Started connecting the controllers to the Classes.">
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Completed MainController.java with all functionality that will be needed to support other files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,9 @@
         <option name="url" value="https://github.com/Dakotady/Software1_C482_QKM2_Task1.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk-17/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -259,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684727738965</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Completed MainController.java with all functionality that will be needed to support other files.">
+      <created>1684898274375</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1684898274375</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,6 +297,10 @@
     <MESSAGE value="populated the Inventory.java and Product.java files to store and receive information." />
     <MESSAGE value="finished filling out the InHouse.java, Inventory.java, Outsourced.java &amp; Product.java." />
     <MESSAGE value="Started connecting the controllers to the Classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started connecting the controllers to the Classes." />
+    <MESSAGE value="Completed MainController.java with all functionality that will be needed to support other files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed MainController.java with all functionality that will be needed to support other files." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Software1_C482_QKM2_Task1$C482_QKM2_Task1.ic" NAME="C482_QKM2_Task1 Coverage Results" MODIFIED="1684903334926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

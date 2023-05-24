@@ -58,11 +58,11 @@ public class MainController implements Initializable {
         stage.show();
     }
 
-    public Part selectedPart;
+    public static Part selectedPart;
     public void setSelectedPart(Part selected){
         selectedPart = selected;
     }
-    public Part getSelectedPart(){
+    public static Part getSelectedPart(){
         return selectedPart;
     }
 
