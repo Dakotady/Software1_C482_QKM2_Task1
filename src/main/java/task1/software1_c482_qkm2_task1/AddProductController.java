@@ -3,6 +3,7 @@ package task1.software1_c482_qkm2_task1;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -40,6 +41,8 @@ public class AddProductController implements Initializable {
     public Button cancel_addProduct;
     public Button save_addProduct;
 
+    private ObservableList <Part> association = FXCollections.observableArrayList();
+
     public void onCancelClick(ActionEvent actionEvent) throws IOException {
 
         boolean response;
@@ -63,19 +66,49 @@ public class AddProductController implements Initializable {
 
 
     public void onFilterAddProduct(ActionEvent actionEvent) {
+
+
         String filter = FilterAddProduct.getText();
         ObservableList<Part> filteredList = FXCollections.observableArrayList();
+        boolean isnull = false;
+        boolean idFound = false;
+        partsList_addProduct.getSelectionModel().clearSelection();
+        ObservableList<Part> passover = FXCollections.observableArrayList();
+        passover = Inventory.getAllParts();
 
 
         try {
             Part IdSearch = Inventory.lookupPart(Integer.parseInt(filter));
             filteredList.add(IdSearch);
-        } catch (Exception parseString) {
+            if (IdSearch == null){
+                isnull = true;
+            }else {
+                idFound = true;
+            }
+        } catch (Exception parseString){
             filteredList = Inventory.lookupPart(filter);
         }
-        partsList_addProduct.setItems(filteredList);
 
-        if (filter.isEmpty() || filter.isBlank()) {
+        if (filteredList == null || filteredList.isEmpty() || isnull ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No parts have been found. please refine search criteria.");
+            alert.showAndWait();
+            FilterAddProduct.setText("");
+        }else if (idFound){
+            partsList_addProduct.setItems(Inventory.getAllParts());
+            for (int i = 0; i < passover.size(); i++){
+                if (String.valueOf(passover.get(i).getId()).contains(filter)){
+                    partsList_addProduct.getSelectionModel().select(i);
+                    partsList_addProduct.scrollTo(i);
+                }
+            }
+
+        }else {
+            partsList_addProduct.setItems(filteredList);
+
+        }
+
+        if (filter.isEmpty() || filter.isBlank()){
             partsList_addProduct.setItems(Inventory.getAllParts());
         }
     }
@@ -84,16 +117,62 @@ public class AddProductController implements Initializable {
 
         Part newAssociation = (Part) partsList_addProduct.getSelectionModel().getSelectedItem();
 
+        if (newAssociation == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No part has been selected. Please select a part to add.");
+            alert.showAndWait();
+        } else {
+            association.addAll(newAssociation);
+
+            col_PartID_associated.setCellValueFactory(new PropertyValueFactory<Part, String>("id"));
+            col_PartName_associated.setCellValueFactory(new PropertyValueFactory<Part, String>("name"));
+            col_InvLevel_associated.setCellValueFactory(new PropertyValueFactory<Part, String>("stock"));
+            col_PriceCostPerUnit_associated.setCellValueFactory(new PropertyValueFactory<Part, String>("price"));
+            association_addProduct.setItems(association);
+        }
+
+
     }
 
     public void onRemoveAssociationClick(ActionEvent actionEvent) {
+
+        Part newAssociation = (Part) association_addProduct.getSelectionModel().getSelectedItem();
+
+        if (newAssociation == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("No part has been selected. Please select a part to remove.");
+            alert.showAndWait();
+        }else {
+
+            boolean response;
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Do you wish remove the association?");
+            alert.setContentText("Choose Ok to continue or Cancel to keep the part.");
+            ButtonType result = alert.showAndWait().orElse(ButtonType.CANCEL);
+            response = result == ButtonType.OK;
+
+            if (response) {
+                association.remove(newAssociation);
+
+                association_addProduct.setItems(association);
+            }
+        }
+
     }
 
     public void onSaveClick(ActionEvent actionEvent) throws IOException {
 
         boolean textError = false;
         boolean errorFree = true;
+        boolean ParseError = false;
+        String parseErrorText = "";
 
+        String productName = null;
+        double price = 0;
+        int stock = 0;
+        int min = 0;
+        int max = 0;
 
         if (name_addProduct.getText().isEmpty() || name_addProduct.getText().isEmpty() || name_addProduct.getText() == null) {
             textError = true;
@@ -114,48 +193,99 @@ public class AddProductController implements Initializable {
             alert.showAndWait();
         } else {
 
-            Main.UniqueIDs uniqueIDs = new Main.UniqueIDs();
+            try {
+                try {
+                    if (Integer.parseInt(name_addProduct.getText()) >= 0){
+                        ParseError = true;
+                        parseErrorText = "Name is not equal to a String. ";
+                    }
+                }catch (Exception convertToString){
+                    productName = name_addProduct.getText();
+                }
 
+                try {
+                    if (Double.parseDouble(name_addProduct.getText()) >= 0.00){
+                        ParseError = true;
+                        parseErrorText = "Name is not equal to a String. ";
+                    }
+                }catch (Exception convertToString){
+                    productName = name_addProduct.getText();
+                }
 
-            int id = uniqueIDs.outputUid();
-            String productName = name_addProduct.getText();
-            double price = Double.parseDouble(price_addProduct.getText());
-            int stock = Integer.parseInt(inv_addProduct.getText());
-            int min = Integer.parseInt(min_addProduct.getText());
-            int max = Integer.parseInt(max_addProduct.getText());
+            }catch (Exception cannotConvertString){
 
-
-
-            if (min > max) {
-                Alert alert1 = new Alert(Alert.AlertType.ERROR);
-                alert1.setContentText("The minimum value cannot be greater than the max value.");
-                alert1.showAndWait();
-                min_addProduct.setText("");
-                errorFree = false;
-            } else if (stock > max || stock < min) {
-                Alert alert1 = new Alert(Alert.AlertType.ERROR);
-                alert1.setContentText("The Inv value cannot be greater than the max value.");
-                alert1.showAndWait();
-                inv_addProduct.setText("");
-                errorFree = false;
             }
 
-
-            if (errorFree){
-                Product product = new Product(id, productName, price, stock, min, max);
-                Inventory.addProduct(product);
+            try {
+                price = Double.parseDouble(price_addProduct.getText());
+            }catch (Exception cannotConvertDouble){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert price to double. ";
             }
 
-
-            if (errorFree) {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainForm.fxml")));
-                Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-                Scene cancel = new Scene(root, 1000, 400);
-                stage.setTitle("");
-                stage.setScene(cancel);
-                stage.show();
+            try {
+                stock = Integer.parseInt(inv_addProduct.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert Inv to a Integer. ";
             }
 
+            try {
+                min = Integer.parseInt(min_addProduct.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert min to a Integer. ";
+            }
+
+            try {
+                max = Integer.parseInt(max_addProduct.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert max to a Integer. ";
+            }
+
+            if (ParseError){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(parseErrorText);
+                alert.showAndWait();
+            }else {
+
+                if (min > max) {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setContentText("The minimum value cannot be greater than the max value.");
+                    alert1.showAndWait();
+                    min_addProduct.setText("");
+                    errorFree = false;
+                } else if (stock > max || stock < min) {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setContentText("The Inv value cannot be greater than the max value or less than the min value.");
+                    alert1.showAndWait();
+                    inv_addProduct.setText("");
+                    errorFree = false;
+                }
+
+
+                if (errorFree) {
+                    int id = Main.UniqueIDs.setID();
+
+                    Product product = new Product(id, productName, price, stock, min, max);
+                    Inventory.addProduct(product);
+
+                    for (Part part : association) {
+                        product.addAssociatedPart(part);
+                    }
+
+                }
+
+                if (errorFree) {
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainForm.fxml")));
+                    Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+                    Scene cancel = new Scene(root, 1000, 400);
+                    stage.setTitle("");
+                    stage.setScene(cancel);
+                    stage.show();
+                }
+            }
         }
     }
 
@@ -167,5 +297,7 @@ public class AddProductController implements Initializable {
             col_InvLevel_allParts.setCellValueFactory(new PropertyValueFactory<Product, String>("stock"));
             col_PriceCostPerUnit_allParts.setCellValueFactory(new PropertyValueFactory<Product, String>("price"));
             partsList_addProduct.setItems(Inventory.getAllParts());
+
+
         }
 }

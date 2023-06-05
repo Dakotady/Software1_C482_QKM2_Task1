@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
 
 
 /**
@@ -37,8 +35,24 @@ public class Main extends Application {
         launch();
     }
 
+    public static class ProgramInitialized{
+
+        public static boolean opened;
+
+        public static boolean getStatus(){
+            return opened;
+        }
+    }
+
     public static class UniqueIDs {
-        private int count = 0;
+        private static int count;
+
+        public static int setID(){
+            count++;
+            return count;
+        }
+
+        /*
         private Set<Integer> usedIds;
 
         public UniqueIDs() {
@@ -60,5 +74,6 @@ public class Main extends Application {
             int Uid = uniqueIDs.generateUniqueId();
             return Uid;
         }
+         */
     }
 }

@@ -69,6 +69,17 @@ public class AddPartController implements Initializable {
 
         boolean textError = false;
         boolean errorFree = true;
+        boolean ParseError = false;
+        String parseErrorText = "";
+
+        String partName = null;
+        double price = 0;
+        int stock = 0;
+        int min = 0;
+        int max = 0;
+        int machID = 0;
+        String compName = null;
+
 
         if (name_addPart.getText().isEmpty() || name_addPart.getText().isEmpty() || name_addPart.getText() == null){
             textError = true;
@@ -91,56 +102,133 @@ public class AddPartController implements Initializable {
             alert.showAndWait();
         }else {
 
-            Main.UniqueIDs uniqueIDs = new Main.UniqueIDs();
+            try {
+                try {
+                    if (Integer.parseInt(name_addPart.getText()) >= 0){
+                        ParseError = true;
+                        parseErrorText = "Name is not equal to a String. ";
+                    }
+                }catch (Exception convertToString){
+                    partName = name_addPart.getText();
+                }
 
+                try {
+                    if (Double.parseDouble(name_addPart.getText()) >= 0.00){
+                        ParseError = true;
+                        parseErrorText = "Name is not equal to a String. ";
+                    }
+                }catch (Exception convertToString){
+                    partName = name_addPart.getText();
+                }
 
-            int id = uniqueIDs.outputUid();
-            String partName = name_addPart.getText();
-            double price = Double.parseDouble(priceCost_addPart.getText());
-            int stock = Integer.parseInt(inv_addPart.getText());
-            int min = Integer.parseInt(min_addPart.getText());
-            int max = Integer.parseInt(max_addPart.getText());
+            }catch (Exception cannotConvertString){
 
-
-
-            if (min > max) {
-                Alert alert1 = new Alert(Alert.AlertType.ERROR);
-                alert1.setContentText("The minimum value cannot be greater than the max value.");
-                alert1.showAndWait();
-                min_addPart.setText("");
-                errorFree = false;
-            } else if (stock > max || stock < min) {
-                Alert alert1 = new Alert(Alert.AlertType.ERROR);
-                alert1.setContentText("The Inv value cannot be greater than the max value.");
-                alert1.showAndWait();
-                inv_addPart.setText("");
-                errorFree = false;
             }
 
-
-            if (inHouseSelect_addPart.isSelected() && errorFree) {
-
-                int machID = Integer.parseInt(flexField_addPart.getText());
-                InHouse inHouse = new InHouse(id, partName, price, stock, min, max, machID);
-                Inventory.addPart(inHouse);
+            try {
+                price = Double.parseDouble(priceCost_addPart.getText());
+            }catch (Exception cannotConvertDouble){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert price to double. ";
             }
 
-            if (outSourcedSelect_addPart.isSelected() && errorFree) {
-                String compName = flexField_addPart.getText();
-                Outsourced outsourced = new Outsourced(id, partName, price, stock, min, max, compName);
-                Inventory.addPart(outsourced);
+            try {
+                stock = Integer.parseInt(inv_addPart.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert Inv to a Integer. ";
             }
 
+            try {
+                min = Integer.parseInt(min_addPart.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert min to a Integer. ";
+            }
+
+            try {
+                max = Integer.parseInt(max_addPart.getText());
+            }catch (Exception cannotConvertNum){
+                ParseError = true;
+                parseErrorText = parseErrorText + "Cannot convert max to a Integer. ";
+            }
+
+            if (inHouseSelect_addPart.isSelected()){
+                try {
+                    machID = Integer.parseInt(flexField_addPart.getText());
+                }catch (Exception cannotConvertNum){
+                    ParseError = true;
+                    parseErrorText = parseErrorText + "Cannot convert machine ID to a Integer. ";
+                }
+            }else {
+                try {
+                    try {
+                        if (Integer.parseInt(flexField_addPart.getText()) >= 0){
+                            ParseError = true;
+                            parseErrorText = "Name is not equal to a String. ";
+                        }
+                    }catch (Exception convertToString){
+                        compName = flexField_addPart.getText();
+                    }
+
+                    try {
+                        if (Double.parseDouble(flexField_addPart.getText()) >= 0.00){
+                            ParseError = true;
+                            parseErrorText = "Name is not equal to a String. ";
+                        }
+                    }catch (Exception convertToString){
+                        compName = flexField_addPart.getText();
+                    }
+
+                }catch (Exception cannotConvertString){
+
+                }
+            }
+
+            if (ParseError){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(parseErrorText);
+                alert.showAndWait();
+            }else {
+
+                if (min > max) {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setContentText("The minimum value cannot be greater than the max value.");
+                    alert1.showAndWait();
+                    min_addPart.setText("");
+                    errorFree = false;
+                } else if (stock > max || stock < min) {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setContentText("The Inv value cannot be greater than the max value or less than min value.");
+                    alert1.showAndWait();
+                    inv_addPart.setText("");
+                    errorFree = false;
+                }
 
 
+                if (inHouseSelect_addPart.isSelected() && errorFree) {
+                    int id = Main.UniqueIDs.setID();
 
-            if (errorFree) {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainForm.fxml")));
-                Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-                Scene cancel = new Scene(root, 1000, 400);
-                stage.setTitle("");
-                stage.setScene(cancel);
-                stage.show();
+                    InHouse inHouse = new InHouse(id, partName, price, stock, min, max, machID);
+                    Inventory.addPart(inHouse);
+                }
+
+                if (outSourcedSelect_addPart.isSelected() && errorFree) {
+                    int id = Main.UniqueIDs.setID();
+
+                    Outsourced outsourced = new Outsourced(id, partName, price, stock, min, max, compName);
+                    Inventory.addPart(outsourced);
+                }
+
+
+                if (errorFree) {
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MainForm.fxml")));
+                    Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+                    Scene cancel = new Scene(root, 1000, 400);
+                    stage.setTitle("");
+                    stage.setScene(cancel);
+                    stage.show();
+                }
             }
         }
 

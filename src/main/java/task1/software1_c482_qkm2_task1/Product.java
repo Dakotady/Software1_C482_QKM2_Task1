@@ -110,7 +110,7 @@ public class Product {
         associatedParts.add(part);
     }
 
-    public boolean deleteAssociatedPart(Part selectedAssociatedPart){
+    public boolean deleteAssociatedParts(Part selectedAssociatedPart){
         if (associatedParts.contains(selectedAssociatedPart)){
             associatedParts.remove(selectedAssociatedPart);
             return true;
@@ -119,7 +119,7 @@ public class Product {
     }
 
 
-    public ObservableList<Part> getAssociatedParts(){
+    public ObservableList<Part> getAllAssociatedParts(){
         return associatedParts;
     }
 
