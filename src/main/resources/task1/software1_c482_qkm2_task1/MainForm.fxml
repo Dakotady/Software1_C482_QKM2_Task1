@@ -50,7 +50,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="filterProduct" layoutX="275.0" layoutY="19.0" onAction="#onFilterProduct" prefHeight="25.0" prefWidth="158.0" promptText="Search by Part ID or Name" />
+      <TextField fx:id="filterProduct" layoutX="256.0" layoutY="19.0" onAction="#onFilterProduct" prefHeight="25.0" prefWidth="177.0" promptText="Search by Product ID or Name" />
       <Button fx:id="onAddProduct" layoutX="215.0" layoutY="257.0" mnemonicParsing="false" onAction="#onAddProductClick" prefHeight="25.0" prefWidth="53.0" text="Add" />
       <Button fx:id="onModifyProduct" layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#onModifyProductClick" text="Modify" />
       <Button fx:id="onDeleteProduct" layoutX="347.0" layoutY="257.0" mnemonicParsing="false" onAction="#onDeleteProductClick" text="Delete" />
