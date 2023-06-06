@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="fixed issues with class requirements, added in extra quality checks, started working on part and product associations.">
+    <list default="true" id="fe309ab2-5284-49e1-9405-c6462edc267f" name="Changes" comment="Complete Project with requirements. Pending Javadoc additions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/AddProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/InHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/InHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Inventory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyPartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/ModifyProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Outsourced.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/task1/software1_c482_qkm2_task1/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task1/software1_c482_qkm2_task1/MainForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684957416689</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Complete Project with requirements. Pending Javadoc additions.">
+      <created>1685943011818</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685943011818</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,7 +328,8 @@
     <MESSAGE value="Completed MainController.java with all functionality that will be needed to support other files." />
     <MESSAGE value="Modified the MainController.java and finished the ModifyPartController.java &amp; AddPartController.java." />
     <MESSAGE value="fixed issues with class requirements, added in extra quality checks, started working on part and product associations." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with class requirements, added in extra quality checks, started working on part and product associations." />
+    <MESSAGE value="Complete Project with requirements. Pending Javadoc additions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Project with requirements. Pending Javadoc additions." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Software1_C482_QKM2_Task1$C482_QKM2_Task1.ic" NAME="C482_QKM2_Task1 Coverage Results" MODIFIED="1684903334926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -2,18 +2,19 @@ package task1.software1_c482_qkm2_task1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.io.IOException;
 import java.util.*;
 
-public class AddPartController implements Initializable {
+/**
+ * This class runs all necessary steps to Add a new part.
+ */
+public class AddPartController{
     public ToggleGroup group1;
     public RadioButton inHouseSelect_addPart;
     public RadioButton outSourcedSelect_addPart;
@@ -28,11 +29,10 @@ public class AddPartController implements Initializable {
     public Button save_addPart;
     public Button cancel_addPart;
 
-
-    public void  initialize(URL url, ResourceBundle resourceBundle){
-
-    }
-
+    /**
+     * When InHouse is selected it modifies the flexLabel to display "Machine ID", and when Outsourced is selected it will display "Company Name".
+     * @param actionEvent
+     */
     public void OnRadioClick(ActionEvent actionEvent) {
 
         if (inHouseSelect_addPart.isSelected()){
@@ -44,7 +44,12 @@ public class AddPartController implements Initializable {
         }
     }
 
-
+    /**
+     * When the Cancel Button is selected it will ask the user if they would like to cancel if they choose "Ok" it will take them to the Main menu.<br>
+     * If they select "cancel" it will take them back to the current screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onCancelClick(ActionEvent actionEvent) throws IOException {
 
         boolean response;
@@ -65,6 +70,11 @@ public class AddPartController implements Initializable {
             }
     }
 
+    /**
+     * When the save button is clicked it will check to see if the part can be submitted, and after the logical test passes it will become an added part.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onSaveClick(ActionEvent actionEvent) throws IOException {
 
         boolean textError = false;

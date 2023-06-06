@@ -18,6 +18,9 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * this class will control the main form and load parts and products when initialized.
+ */
 public class MainController implements Initializable {
 
     public TableView partsList;
@@ -40,14 +43,21 @@ public class MainController implements Initializable {
     public Button onDeleteProduct;
     public Button exitApp;
 
-    // this is for the exit button on the main form.
+    /**
+     * this will exit the application when the exit button is clicked.
+     */
     @FXML
     public void onExitAppButtonClick() {
 
         Platform.exit();
         }
 
-    // this is to send the user to the add part form.
+
+    /**
+     * this will open the AddPart form when selected.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onAddPartClick(ActionEvent actionEvent) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AddPart.fxml")));
@@ -59,14 +69,28 @@ public class MainController implements Initializable {
     }
 
     public static Part selectedPart;
+
+    /**
+     * this will set the selected part from the table when called.
+     * @param selected
+     */
     public void setSelectedPart(Part selected){
         selectedPart = selected;
     }
+
+    /**
+     * when called it will get the selected part from the table.
+     * @return
+     */
     public static Part getSelectedPart(){
         return selectedPart;
     }
 
-    // this is to send the user to the add part form.
+    /**
+     * this will send the user to the ModifyPart form.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onModifyPartClick(ActionEvent actionEvent) throws IOException {
 
         Part selected = (Part) partsList.getSelectionModel().getSelectedItem();
@@ -86,7 +110,11 @@ public class MainController implements Initializable {
         }
     }
 
-
+    /**
+     * this will send the user to the AddProduct form.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onAddProductClick(ActionEvent actionEvent) throws IOException {
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AddProduct.fxml")));
@@ -98,13 +126,28 @@ public class MainController implements Initializable {
     }
 
     public static Product selectedProduct;
+
+    /**
+     * this will set the selected product form the product table.
+     * @param selected
+     */
     public void setSelectedProduct(Product selected){
         selectedProduct = selected;
     }
+
+    /**
+     * this will get the selected product form the product table.
+     * @return
+     */
     public static Product getSelectedProduct(){
         return selectedProduct;
     }
 
+    /**
+     * this will send the user to the ModifyProduct form.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onModifyProductClick(ActionEvent actionEvent) throws IOException {
 
         Product selected = (Product) productsList.getSelectionModel().getSelectedItem();
@@ -125,7 +168,10 @@ public class MainController implements Initializable {
         }
     }
 
-
+    /**
+     * this use the users input to filter or highlight a row in the parts table.
+     * @param actionEvent
+     */
     public void onFilterPart(ActionEvent actionEvent) {
 
         String filter = filterPart.getText();
@@ -173,6 +219,10 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * this use the users input to filter or highlight a row in the product table.
+     * @param actionEvent
+     */
     public void onFilterProduct(ActionEvent actionEvent) {
 
         String filter = filterProduct.getText();
@@ -219,6 +269,10 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * this will allow the users to delete parts when the delete button is selected along with a part.
+     * @param actionEvent
+     */
     public void onDeletePartClick(ActionEvent actionEvent) {
 
         boolean response;
@@ -245,6 +299,10 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * this will allow the users to delete products when the delete button is selected along with a products.
+     * @param actionEvent
+     */
     public void onDeleteProductClick(ActionEvent actionEvent) {
 
         boolean response;
@@ -279,6 +337,11 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * when the application is started it will load the following parts and products to the Inventory Class.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (Main.ProgramInitialized.getStatus() == false){

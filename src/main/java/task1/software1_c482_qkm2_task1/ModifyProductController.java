@@ -16,6 +16,11 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * When the user opens the modifyProduct form it will start by loading all parts to the partsList_addProduct table.<br>
+ * It will also load all the information from the selected product.<br>
+ * this class will also contain all the methods needed to modify a product, and associate/remove parts with the product.
+ */
 public class ModifyProductController implements Initializable {
 
     public TextField filterModifyProduct;
@@ -39,8 +44,15 @@ public class ModifyProductController implements Initializable {
     public Button removeAssociation_modifyProduct;
     public Button save_modifyProduct;
 
+    // this will store parts to be associated with the new product.
     private ObservableList<Part> association = FXCollections.observableArrayList();
 
+    /**
+     * When the Cancel Button is selected it will ask the user if they would like to cancel if they choose "Ok" it will take them to the Main menu.<br>
+     * If they select "cancel" it will take them back to the current screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onCancelClick(ActionEvent actionEvent) throws IOException {
 
         boolean response;
@@ -63,6 +75,12 @@ public class ModifyProductController implements Initializable {
 
     }
 
+    /**
+     * This will allow users to highlight and go to a single ID. the user can also do either a full name or partial name lookup.<br>
+     * when the full name or partial name lookup is complete it will only have items that contain what the user input.<br>
+     * when the FilterAddProduct text field is empty it will repopulate all currently loaded parts.
+     * @param actionEvent
+     */
     public void onFilterModifyProduct(ActionEvent actionEvent) {
 
         String filter = filterModifyProduct.getText();
@@ -108,11 +126,13 @@ public class ModifyProductController implements Initializable {
         if (filter.isEmpty() || filter.isBlank()){
             partsList_modifyProduct.setItems(Inventory.getAllParts());
         }
-
-
-
     }
 
+    /**
+     * when the Add button is selected and a part has been selected it will add it to the association_addProduct table.<br>
+     * after the product has been saved the parts will then be added as an association for the product.
+     * @param actionEvent
+     */
     public void onAddAssociationClick(ActionEvent actionEvent) {
 
         Part newAssociation = (Part) partsList_modifyProduct.getSelectionModel().getSelectedItem();
@@ -133,6 +153,10 @@ public class ModifyProductController implements Initializable {
 
     }
 
+    /**
+     * This will allow users to Remove part Associations pending the product being saved.
+     * @param actionEvent
+     */
     public void onRemoveAssociationClick(ActionEvent actionEvent) {
 
         Part newAssociation = (Part) association_modifyProduct.getSelectionModel().getSelectedItem();
@@ -159,6 +183,12 @@ public class ModifyProductController implements Initializable {
         }
     }
 
+    /**
+     * When the save button is clicked it will check to see if the product can be submitted, and after the logical test passes it will become a modified product.<br>
+     * this will also finalize the part associations tied to the product.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onSaveClick(ActionEvent actionEvent) throws IOException {
 
         boolean textError = false;
@@ -291,6 +321,12 @@ public class ModifyProductController implements Initializable {
         }
     }
 
+    /**
+     * when the form is opened it will populate the partsList_addProduct table with all the parts loaded in the Inventory.<br>
+     * This method will also load all the selected part information and the parts that have been previously associated.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

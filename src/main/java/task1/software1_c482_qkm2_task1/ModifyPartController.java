@@ -15,6 +15,9 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * This class runs all necessary steps to modify a part. It will also load the part on initialization.
+ */
 public class ModifyPartController implements Initializable {
     public ToggleGroup group1;
     public RadioButton inHouseSelect_modifyPart;
@@ -30,9 +33,11 @@ public class ModifyPartController implements Initializable {
     public Button save_modifyPart;
     public Button cancel_modifyPart;
 
+    /**
+     * When InHouse is selected it modifies the flexLabel to display "Machine ID", and when Outsourced is selected it will display "Company Name".
+     * @param actionEvent
+     */
     @FXML
-
-
     public void OnRadioClick(ActionEvent actionEvent) {
 
         if (inHouseSelect_modifyPart.isSelected()){
@@ -44,6 +49,12 @@ public class ModifyPartController implements Initializable {
         }
     }
 
+    /**
+     * When the Cancel Button is selected it will ask the user if they would like to cancel if they choose "Ok" it will take them to the Main menu.<br>
+     * If they select "cancel" it will take them back to the current screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onCancelClick(ActionEvent actionEvent) throws IOException {
 
 
@@ -66,6 +77,11 @@ public class ModifyPartController implements Initializable {
 
     }
 
+    /**
+     * When the save button is clicked it will check to see if the part can be submitted, and after the logical test passes it will modify the part.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void onSaveClick(ActionEvent actionEvent) throws IOException {
 
         Part selectedPart = MainController.getSelectedPart();
@@ -236,6 +252,11 @@ public class ModifyPartController implements Initializable {
         }
     }
 
+    /**
+     * when the form is first started it will load the selected part information in the appropriate fields.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Part selectedPart = MainController.getSelectedPart();
